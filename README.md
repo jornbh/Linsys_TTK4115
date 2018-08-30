@@ -1,7 +1,7 @@
 # Linsys_TTK4115
 A basic guide tht will (Hopefully) make it easier to use plots in Matlab
 
-##Running the guide
+## Running the guide
 Open guide.m in the top folder
 1. Run the entire script first (Or just run the init-section)
 2. Find a plot that has something you need
@@ -11,7 +11,7 @@ Open guide.m in the top folder
     * The Plots can be run independently, as long as the init-part has been run
 
 
-##Getting data from the simulink-file
+## Getting data from the simulink-file
  * ???
 
 
