@@ -11,14 +11,14 @@ Open guide.m in the top folder
     * The Plots can be run independently, as long as the init-part has been run
 
 
-## Getting data from the simulink-file
- * ???
 
 
-# Misc.
+
+### Misc.
 * Close all plots with:
     * close all
 
-## Not implemented
-Titles in Plots with multiple subplots
-Latex-code in the plots
+### Not implemented
+* Titles in Plots with multiple subplots
+* Latex-code in the plots
+* How to get data from a simulink-file
