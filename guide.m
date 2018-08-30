@@ -3,7 +3,8 @@
 % Press (ctrl+enter) to run the section your cursor is currently in ( Marked in yellow)
 clear all
 close all
-%% Initialize some arrays, that can be used
+%% Init
+%Just some example-arrays
 X1 = [1:100]; 
 Y1 = sin(X1./10); 
 
@@ -11,7 +12,7 @@ Y1 = sin(X1./10);
 X2 = [1:0.5:100];
 Y2= 1.-(1./X2);
 
-
+disp("Init complete");
 
 
 %% Basic plot 
@@ -146,3 +147,65 @@ legend(["Add a string after X1 and Y1 to give colour or style", "string = b--","
 
 
 hold off;
+
+
+%% Automatically Save Plot
+figure;
+
+    
+
+hold on 
+title("Automatically Save Plot");
+
+plot(X1, Y1); 
+legend("A curve...");
+xlabel("X");
+ylabel("Y");
+hold off 
+
+% TO save the current plot use:
+    % print( filename, "-d"+ filename )
+    % Use epsc instad of eps to get colours
+print("Plot_filename", "-depsc");
+print("Plot_filename", "-djpeg")
+disp("Saved Plot as .jpeg and .eps "); 
+
+
+%% Change Window-size
+% The parameters can be given when:
+    % making the figure(), or with the
+    % set()-function
+
+f = figure('color' , 'cyan'); 
+
+% The variable gcf returns the current figure
+set(gcf, 'color', 'green'); 
+
+
+
+% Units sets how position is calculated
+    % 'pixels'      :   (Default) 
+    % 'normalized'  :   Positions on the window is represented with a
+                        % number from 0 to 1            
+    %'centimeters'  :   
+    %'characters'   :   Character-width= width of character 'x' in the
+                        % default size
+
+                        
+Units = 'normalized';  % Normalized is probably easiest to use  
+set(gcf, 'Units', Units); 
+    
+    
+% Position = [ leftPosition, bottomPosition, width, height]; 
+Position = [0,0, 1, 1]; % (Full screen if units = normalized)
+set(gcf, 'Position', Position);
+
+
+
+hold on 
+title("Change Window-size");  
+
+plot(X1, Y1); 
+legend("bg- colour set to green"); 
+
+hold off
