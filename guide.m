@@ -62,21 +62,17 @@ title("Ploting values against each other (1)");
     % same for between X1 and Y1 (and so on)
 plot(X1, Y1, X2, Y2);
 legend(["It is fine to have more plots that legends"]);
+% Or more legends than plots (But it causes a warning)
 hold off
 
 
 
-figure;
-hold on 
 
-title("Ploting values against each other (2)");
-%Method 2:
-    % GIve the X-values first and then a list of all Y-values 
-    %(Separate with ; )
-plot( X1, [Y1;Y1.*2] ); 
-legend(["It is also fine to have", "More legends than plots", "Will not show up"]);
+% %Method 2:
+%     % Give the X-values first and then a list of all Y-values 
+%     %(Separate with ; )
+        % plot( X1, [Y1; sin(X1) ] ); 
 
-hold off
 
 
 
@@ -99,12 +95,12 @@ plot(X1, Y1);
 % They work just like normal between hold on and hold off
 subplot(2,1, 2); 
 hold on
-plot(X2, Y2);
+plot(X2, Y2, X2, -Y2);
 legend("Subplot 2");
 xlabel("X"); 
 ylabel("Y"); 
 
-legend("Title is not working");
+legend(["Multiple subplots", "Title is not working"]);
 hold off
 hold off
 
@@ -168,6 +164,8 @@ hold off
     % Use epsc instad of eps to get colours
 print("Plot_filename", "-depsc");
 print("Plot_filename", "-djpeg")
+
+% string(10) makes the number 10 into "10" (Might be usefull for making filenames)
 disp("Saved Plot as .jpeg and .eps "); 
 
 
@@ -195,9 +193,12 @@ set(gcf, 'color', 'green');
 Units = 'normalized';  % Normalized is probably easiest to use  
 set(gcf, 'Units', Units); 
     
-    
-% Position = [ leftPosition, bottomPosition, width, height]; 
-Position = [0,0, 1, 1]; % (Full screen if units = normalized)
+% Position 0, 0 is in the bottom left corner
+% Position = [    Position of left border ,
+%                 Position of bottom border, 
+%                 width, 
+%                 height   ]; 
+Position = [0,0, 1, 1]; %  ==>  Full screen if 'units' = 'normalized'
 set(gcf, 'Position', Position);
 
 
@@ -209,3 +210,24 @@ plot(X1, Y1);
 legend("bg- colour set to green"); 
 
 hold off
+
+
+
+%% Misc. 
+% Just so the windows are propperly placed, without cluttering the code
+
+%Get handle of all open windows
+figHandles = get(groot, 'Children');
+
+
+= 0.5
+for i = size(figHandles, 1):-1:2
+    x0 = 0.5-dims/2;
+    y0 = 0.5-dims/2;
+    Position = [x0,y0 winSize, winSize]
+    
+    set(figHandles(i), 'units', 'normalized');
+    set(figHandles(i), 'Position', Position);
+end;
+   
+uistack(figHandles(1), 'bottom'); % Put fullscreen-window behind all others

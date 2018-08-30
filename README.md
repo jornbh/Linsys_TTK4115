@@ -12,10 +12,13 @@ Open guide.m in the top folder
 
 
 ##Getting data from the simulink-file
- * I ???
+ * ???
 
 
+# Misc.
+* Close all plots with:
+    * close all
 
 ## Not implemented
 Titles in Plots with multiple subplots
-
+Latex-code in the plots
