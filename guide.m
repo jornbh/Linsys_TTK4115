@@ -55,7 +55,7 @@ hold off
 
 figure
 hold on 
-title("Ploting values against each other (1)");
+title("Ploting values against each other");
 %Methon 1:
     %Give the inputs in pairs
     % X1 and X2 can have different lengths as long as the length is the
@@ -220,14 +220,14 @@ hold off
 figHandles = get(groot, 'Children');
 
 
-= 0.5
+winSize = 0.5
 for i = size(figHandles, 1):-1:2
-    x0 = 0.5-dims/2;
-    y0 = 0.5-dims/2;
+    x0 = 0.5-winSize/2;
+    y0 = 0.5-winSize/2;
     Position = [x0,y0 winSize, winSize]
     
     set(figHandles(i), 'units', 'normalized');
     set(figHandles(i), 'Position', Position);
 end;
    
-uistack(figHandles(1), 'bottom'); % Put fullscreen-window behind all others
+uistack(figHandles(1), 'bottom'); % Put fullscreen-window behind all others 

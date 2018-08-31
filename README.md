@@ -6,7 +6,7 @@ Open guide.m in the top folder
 1. Run the entire script first (Or just run the init-section)
 2. Find a plot that has something you need
 3. The section corresponding to  (ctrl+f) to find the section ( It has the same name as the title of the plot)
-4. T0 only run one section hit (ctrl+enter)
+4. To only run one section hit (ctrl+enter)
     * The current section is marked in yellow  your corsor is above it 
     * The Plots can be run independently, as long as the init-part has been run
 
@@ -14,11 +14,22 @@ Open guide.m in the top folder
 
 
 
-### Misc.
-* Close all plots with:
-    * close all
+### Misc. Matlab-tips
+* close all
+    * Closes all plots
+* sim('simulink_filename')
+    * Runs a simulink-simulation. The filename is without the .slx - ending 
+    *  Does not build anything
+* Use a to file-block to get data from a simulink-simulation to a .mat -file   
+     ![Picture missing](Resources/to_file_block.png)
+    * Remember to change the output-type to array
+     ![Picture missing](Resources/Change_to_array.png)
+* load('filename') 
+    * Get the variable(s) from the .mat file to the workspace (filename is without .mat)
+    * The first row of the matrix is time, the rest are in order of input.
 
-### Not implemented
+### Not implemented:
 * Titles in Plots with multiple subplots
-* Latex-code in the plots
-* How to get data from a simulink-file
+* Rotating the y-label and changing its position
+* Adding LaTex-code to the labels and legends
+
