@@ -1,6 +1,11 @@
 # Linsys_TTK4115
 A basic guide tht will (Hopefully) make it easier to use plots in Matlab
 
+## TL;DR
+* Use the to file block in simulink to get data to a .mat file 
+* load('filename') loads the data from a .mat file to the matlab workspace 
+* print('filename', '-depsc') saves the plot that is currntly displayed as in eps-format with colours
+
 ## Running the guide
 Open guide.m in the top folder
 1. Run the entire script first (Or just run the init-section)
@@ -27,6 +32,10 @@ Open guide.m in the top folder
 * load('filename') 
     * Get the variable(s) from the .mat file to the workspace (filename is without .mat)
     * The first row of the matrix is time, the rest are in order of input.
+
+* save filename
+    * Lets you save the current workspace as filename.mat
+    * Can be called without any parenthesis or quotation-marks
 
 ### Not implemented:
 * Titles in Plots with multiple subplots
